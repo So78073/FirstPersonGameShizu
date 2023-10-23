@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlvnibfa6hleh"]
+[gd_scene load_steps=6 format=3 uid="uid://dlvnibfa6hleh"]
 
-[ext_resource type="Script" path="res://senes/entitys/player.gd" id="1_flp6t"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ctyhq"]
+[ext_resource type="Texture2D" uid="uid://fepj8jfhmd6a" path="res://sprites/circle.png" id="2_8fxa0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o8lye"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_s31k4"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_a402b"]
+
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_flp6t")
+collision_mask = 255
+script = ExtResource("1_ctyhq")
 
 [node name="colliser" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_o8lye")
@@ -22,3 +26,41 @@ mesh = SubResource("CapsuleMesh_s31k4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.188281)
 
 [node name="Came" type="Camera3D" parent="node/cam"]
+metadata/_edit_lock_ = true
+
+[node name="raycast" type="Node3D" parent="node/cam/Came"]
+
+[node name="RayCast3D" type="RayCast3D" parent="node/cam/Came/raycast"]
+target_position = Vector3(0, 0, -2.865)
+collision_mask = 254
+
+[node name="hands" type="Node3D" parent="node/cam"]
+
+[node name="right" type="MeshInstance3D" parent="node/cam/hands"]
+transform = Transform3D(-0.198381, 0.0224379, -0.0341411, -0.0250278, -0.188629, 0.176745, 0.0043105, -0.0625737, -0.545043, 0.364566, -0.392669, -0.46605)
+mesh = SubResource("BoxMesh_a402b")
+skeleton = NodePath("")
+
+[node name="left" type="MeshInstance3D" parent="node/cam/hands"]
+transform = Transform3D(-0.157015, 0.050089, 0.325177, -0.0392628, -0.193613, 0.0894935, -0.117493, -0.00223777, -0.464464, 0.0083023, -0.495284, -0.412784)
+visible = false
+mesh = SubResource("BoxMesh_a402b")
+skeleton = NodePath("")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Circle" type="Sprite2D" parent="CanvasLayer/Node"]
+scale = Vector2(-0.02, -0.02)
+texture = ExtResource("2_8fxa0")
