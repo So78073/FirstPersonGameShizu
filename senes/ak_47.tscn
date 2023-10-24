@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://q8l0qdihnov7"]
 
 [ext_resource type="Script" path="res://scripts/gun.gd" id="1_00n3b"]
-[ext_resource type="PackedScene" uid="uid://c5dn3rgd7hsn3" path="res://models/ak.glb" id="1_ygq3y"]
+[ext_resource type="PackedScene" uid="uid://c5dn3rgd7hsn3" path="res://models/ak47/ak.glb" id="1_ygq3y"]
 
 [node name="ak47" type="StaticBody3D"]
 collision_layer = 4

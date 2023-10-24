@@ -4,7 +4,7 @@ var speed = 5  # Velocidade de movimento
 
 
 	
-func _physics_process(delta):
+func _process(_delta):
 
 	var direction = (transform.basis * Vector3(1, 0, 0)).normalized()
 	if direction:

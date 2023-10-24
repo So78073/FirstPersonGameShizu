@@ -1,7 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd2b83devne0r"]
+[gd_scene load_steps=14 format=3 uid="uid://bd2b83devne0r"]
 
+[ext_resource type="PackedScene" uid="uid://b3yv5o1awgkxq" path="res://models/For_cenario_ready/door.tscn" id="1_kqh4e"]
 [ext_resource type="PackedScene" uid="uid://dlvnibfa6hleh" path="res://senes/entitys/player.tscn" id="1_m8qhg"]
-[ext_resource type="PackedScene" uid="uid://bpg3iuesmo1tl" path="res://senes/prefebs/bullet.tscn" id="2_rkr75"]
+[ext_resource type="PackedScene" uid="uid://bhtqov188rj04" path="res://models/For_cenario_ready/wall_cracked_gltf.tscn" id="3_gh6wd"]
+[ext_resource type="PackedScene" uid="uid://721l7yr45ahq" path="res://models/For_cenario_ready/wall_archedwindow_gated_gltf.tscn" id="4_xkpmk"]
+[ext_resource type="PackedScene" uid="uid://cpqnacggcaama" path="res://models/For_cenario_ready/wall_shelves_gltf.tscn" id="5_1b3q4"]
+[ext_resource type="PackedScene" uid="uid://bldq7w6h4aqbv" path="res://models/For_cenario_ready/wall_gltf.tscn" id="6_k1v74"]
+[ext_resource type="PackedScene" uid="uid://owru4h2rb0oc" path="res://models/For_cenario_ready/pillar_gltf.tscn" id="6_xlkp8"]
+[ext_resource type="PackedScene" uid="uid://btx5hbkj10e7n" path="res://models/For_cenario_ready/floor.tscn" id="7_0alck"]
+[ext_resource type="PackedScene" uid="uid://dfqjp8kyu64rx" path="res://models/cenario/floor_wood_large_dark.gltf.glb" id="8_r24b8"]
+[ext_resource type="PackedScene" uid="uid://bjiry56occyos" path="res://senes/prefebs/key.tscn" id="10_058hq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oq8yn"]
 
@@ -10,44 +18,157 @@ albedo_color = Color(0.341176, 1, 0.34902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ys2d6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a4pn3"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_2a04e"]
-
 [node name="world" type="Node3D"]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="house" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6207, -0.0373113, -6.0164)
 
-[node name="ground" type="StaticBody3D" parent="Node3D"]
+[node name="house" type="Node3D" parent="house"]
+
+[node name="door" parent="house/house" instance=ExtResource("1_kqh4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0807667, 0, 0)
+
+[node name="wall_cracked_gltf" parent="house/house" instance=ExtResource("3_gh6wd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05261, 0, 0)
+
+[node name="wall_archedwindow_gated_gltf" parent="house/house" instance=ExtResource("4_xkpmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92674, 0, 0)
+
+[node name="wall_archedwindow_gated_gltf3" parent="house/house" instance=ExtResource("4_xkpmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493795, 0, -15.8585)
+
+[node name="wall_archedwindow_gated_gltf2" parent="house/house" instance=ExtResource("4_xkpmk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.77081, 0, -14.1761)
+
+[node name="wall_shelves_gltf" parent="house/house" instance=ExtResource("5_1b3q4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.24826, 0.00649571, -2.33266)
+
+[node name="wall_shelves_gltf2" parent="house/house" instance=ExtResource("5_1b3q4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.24826, 0.00649571, -6.28475)
+
+[node name="wall_gltf" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.78841, -0.040561, -10.4866)
+
+[node name="wall_gltf2" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53667, -0.040561, -15.8854)
+
+[node name="wall_gltf4" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, 0.0342042, -5.84369)
+
+[node name="wall_gltf7" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, 0.0342042, -2.01099)
+
+[node name="wall_gltf6" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, -0.040561, -13.8582)
+
+[node name="wall_gltf5" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, -0.040561, -9.85139)
+
+[node name="wall_gltf3" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48517, -0.040561, -15.8607)
+
+[node name="door2" parent="house/house" instance=ExtResource("1_kqh4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24457, -0.0272686, -8.34669)
+status = true
+
+[node name="pillar_gltf" parent="house/house" instance=ExtResource("6_xlkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16623, 0, 0)
+
+[node name="pillar_gltf3" parent="house/house" instance=ExtResource("6_xlkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05716, 0, 0.310171)
+
+[node name="pillar_gltf4" parent="house/house" instance=ExtResource("6_xlkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05716, 0, -16.0958)
+
+[node name="pillar_gltf5" parent="house/house" instance=ExtResource("6_xlkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64892, 0, -16.3939)
+
+[node name="NodeFloor" type="Node3D" parent="house/house"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64892, 0, -8.18242)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89509, 0.0872151, 6.29687)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf2" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7791, 0.0872151, 6.29687)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf3" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89509, 0.0872151, 2.31193)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf4" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7791, 0.0872151, 2.31193)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf5" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89509, 0.0872151, -1.70042)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf6" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7791, 0.0872151, -1.70042)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf7" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89509, 0.0872151, -5.65042)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf9" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.946, 0.0872151, -1.70042)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf10" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.946, 0.0872151, -5.65042)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf11" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95543, 0.0872151, 6.40729)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf12" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95543, 0.0872151, 2.45729)
+metadata/_edit_lock_ = true
+
+[node name="floor_wood_large_dark_gltf8" parent="house/house/NodeFloor" instance=ExtResource("8_r24b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7791, 0.0872151, -5.65042)
+metadata/_edit_lock_ = true
+
+[node name="pillar_gltf6" parent="house/house" instance=ExtResource("6_xlkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64892, 0, -8.18242)
+
+[node name="teto" parent="house/house" instance=ExtResource("7_0alck")]
+transform = Transform3D(15.8129, 0, 0, 0, 0.269747, 0, 0, 0, 18.6197, -0.740236, 3.9149, -7.91734)
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="floor" parent="house/house" instance=ExtResource("7_0alck")]
+transform = Transform3D(15.8129, 0, 0, 0, 0.269747, 0, 0, 0, 18.6197, -0.740236, -0.0379677, -7.91734)
+
+[node name="mobilia" type="Node3D" parent="house"]
+
+[node name="wolrd" type="Node3D" parent="."]
+
+[node name="ground" type="StaticBody3D" parent="wolrd"]
 transform = Transform3D(49.8361, 0, 0, 0, 0.0996721, 0, 0, 0, 49.8361, 0, 0, 0)
-collision_layer = 2
+collision_layer = 128
 collision_mask = 255
 
-[node name="collider" type="CollisionShape3D" parent="Node3D/ground"]
+[node name="collider" type="CollisionShape3D" parent="wolrd/ground"]
 transform = Transform3D(1.00136, 0, 0, 0, 1.00136, 0, 0, 0, 1.00136, 0, 0, 0)
 shape = SubResource("BoxShape3D_oq8yn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/ground/collider"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wolrd/ground/collider"]
 material_override = SubResource("StandardMaterial3D_51bcq")
 mesh = SubResource("BoxMesh_ys2d6")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="wolrd"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_m8qhg")]
-transform = Transform3D(1.00143, 0, 0, 0, 1.00143, 0, 0, 0, 1.00143, 0, 1, 0)
+transform = Transform3D(1.00143, 0, 0, 0, 1.00143, 0, 0, 0, 1.00143, 12.0569, 1, 2.47096)
 
-[node name="bullet" parent="." instance=ExtResource("2_rkr75")]
-transform = Transform3D(-0.00319397, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.00319397, -10.7508, 3.056, -8.71167)
-
-[node name="cube001" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8225, -5.07091)
-collision_layer = 128
-collision_mask = 255
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube001"]
-shape = SubResource("BoxShape3D_a4pn3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="cube001/CollisionShape3D"]
-mesh = SubResource("BoxMesh_2a04e")
+[node name="key" parent="." instance=ExtResource("10_058hq")]
+transform = Transform3D(-0.0451262, -0.14233, -0.136073, -0.0241985, 0.142551, -0.141081, 0.195418, -0.0152151, -0.0488922, 12.3306, 2.21811, 0)

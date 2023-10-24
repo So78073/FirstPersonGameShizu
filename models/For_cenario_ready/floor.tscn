@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://btx5hbkj10e7n"]
+
+[ext_resource type="Texture2D" uid="uid://c0woy3gi5h0ag" path="res://models/cenario/trunk_medium_B_dungeon_texture.png" id="1_hqcsf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddn67"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4snm"]
+albedo_texture = ExtResource("1_hqcsf")
+uv1_scale = Vector3(-0.015, -0.015, -0.015)
+
+[sub_resource type="BoxMesh" id="BoxMesh_a7jxo"]
+
+[node name="floor" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ddn67")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1.00403, 0, 0, 0, 1.00403, 0, 0, 0, 1.00403, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_x4snm")
+mesh = SubResource("BoxMesh_a7jxo")

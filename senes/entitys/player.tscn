@@ -11,7 +11,7 @@
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-collision_mask = 255
+collision_mask = 253
 script = ExtResource("1_ctyhq")
 
 [node name="colliser" type="CollisionShape3D" parent="."]
@@ -32,7 +32,8 @@ metadata/_edit_lock_ = true
 
 [node name="RayCast3D" type="RayCast3D" parent="node/cam/Came/raycast"]
 target_position = Vector3(0, 0, -2.865)
-collision_mask = 254
+collision_mask = 65534
+debug_shape_thickness = 1
 
 [node name="hands" type="Node3D" parent="node/cam"]
 
