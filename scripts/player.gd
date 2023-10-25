@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var keys = []
+var current_slot = 1
 
 
 @export_category("Player Settings")
@@ -19,6 +20,8 @@ var cam_ver = 0.0
 var can_click = true
 var can_move = true
 var can_fire = true
+
+var bulletPreload = preload("res://scripts/bullet.gd")
 #==============================================================================
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,6 +34,7 @@ func _physics_process(delta):
 	raycastUpdate()
 	move_and_slide()
 	debug()
+	hands()
 
 
 #==============================================================================
@@ -71,15 +75,30 @@ func raycastUpdate():
 	raycast.force_raycast_update()
 	var collider = raycast.get_collider()
 	
-	if raycast.is_colliding() and Input.is_action_just_pressed("fire"):
-		if collider.name == "key":
-			if keys.find(collider.key_code) == -1:
-				keys.append(collider.key_code)
-				collider.free()
+	if Input.is_action_just_pressed("fire"):
+		if current_slot == 1 and raycast.is_colliding():
+			if collider.name == "key":
+				if keys.find(collider.key_code) == -1:
+					keys.append(collider.key_code)
+					collider.free()
 
-		else: 
-			if collider is Node3D:
-				print(collider.name)
+			else: 
+				if collider is Node3D:
+					print(collider.name)
+
+func hands():
+	if Input.is_action_just_pressed("slot1"):
+		$anim.play("hand_down")
+		current_slot = 1
+	elif Input.is_action_just_pressed("slot2"):
+		$anim.play("hand_down")
+		current_slot = 2
+	elif Input.is_action_just_pressed("slot2"):
+		$anim.play("hand_down")
+		current_slot = 3
+	elif Input.is_action_just_pressed("slot2"):
+		$anim.play("hand_down")
+		current_slot = 4
 
 func debug():
 	if Input.is_action_just_pressed("debug"):
@@ -96,6 +115,23 @@ func _input(event: InputEvent) -> void:
 	
 
 
+func _on_anim_animation_finished(anim_name):
+	print(anim_name)
+	if anim_name == "hand_down":
+		if current_slot == 1:
+			$node/cam/hands/right.visible = true
+			$node/cam/hands/left.visible = false
+			$node/cam/hands/ak47.visible = false
+			
+			$anim.play("hand_up")
+		elif current_slot == 2:
+			print('atual slot: ', current_slot)
+			$node/cam/hands/right.visible = true
+			$node/cam/hands/left.visible = true
+			$node/cam/hands/ak47.visible = true
+			$node/cam/Came/raycast/RayCast3D.enabled = false
+			$anim.play("hand_up")
+		
 
 
 

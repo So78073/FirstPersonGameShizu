@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr8uqv5jma36g"]
+
+[ext_resource type="PackedScene" uid="uid://4atsu46bh5x1" path="res://models/cenario/wall_doorway_Tsplit.gltf.glb" id="1_dguhs"]
+[ext_resource type="PackedScene" uid="uid://dxlk71hgos30x" path="res://models/forcenes/grade.tscn" id="2_hnq2r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j1sna"]
+size = Vector3(0.781975, 3.93613, 1.65134)
+
+[node name="wall_doorway_Tsplit_gltf" instance=ExtResource("1_dguhs")]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." index="1"]
+polygon = PackedVector2Array(-1.005, 0.0102039, -0.995101, 2.22474, -0.670062, 2.72085, 0.544557, 2.73796, 0.989346, 2.32738, 0.989346, 0.0178966, 3.98972, 0.0238541, 3.98239, 4.00967, -3.98626, 3.98724, -3.98412, 0.0255216)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9699, 2.03514, 1.17445)
+shape = SubResource("BoxShape3D_j1sna")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98724, 2.03514, 1.17445)
+shape = SubResource("BoxShape3D_j1sna")
+
+[node name="wall_gated_gltf" parent="." index="4" instance=ExtResource("2_hnq2r")]
+transform = Transform3D(1, 0, 0, 0, 1.15028, 0, 0, 0, 0.360052, 0, -0.796285, 0)

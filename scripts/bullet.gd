@@ -1,14 +1,9 @@
-extends CharacterBody3D
+extends Node3D
 
-var speed = 5  # Velocidade de movimento
+const speed = 40.0
 
+@onready var mesh = $MeshInstance3D
+@onready var raycast = $RayCast3D
 
-	
-func _process(_delta):
-
-	var direction = (transform.basis * Vector3(1, 0, 0)).normalized()
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	move_and_slide()
-
+func _process(delta):
+	position += transform.basis * Vector3(0, 0, -speed) * delta

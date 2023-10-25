@@ -1,25 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpg3iuesmo1tl"]
+[gd_scene load_steps=4 format=3 uid="uid://crj3ll5urpghc"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_x8ukr"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_qhep6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4og38"]
-albedo_color = Color(0.968627, 0.737255, 0, 1)
-metallic_texture_channel = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpvvo"]
+albedo_color = Color(0.972549, 0.866667, 0.454902, 1)
 emission_enabled = true
-emission = Color(0.772549, 0, 0.239216, 1)
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 7.2
 
-[sub_resource type="SphereMesh" id="SphereMesh_hf3x4"]
+[sub_resource type="BoxMesh" id="BoxMesh_2j5gs"]
 
-[node name="bullet" type="CharacterBody3D"]
-collision_layer = 64
-collision_mask = 255
+[node name="bullet" type="Node3D"]
 script = ExtResource("1_x8ukr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_qhep6")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0103027, 0, 0, 0, 0.0117678, 0, 0, 0, 0.0963548, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kpvvo")
+mesh = SubResource("BoxMesh_2j5gs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-material_override = SubResource("StandardMaterial3D_4og38")
-mesh = SubResource("SphereMesh_hf3x4")
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(0.214581, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 0, 0, 0)
+target_position = Vector3(0, 0, 6.03)

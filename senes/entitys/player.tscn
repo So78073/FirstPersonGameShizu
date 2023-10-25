@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlvnibfa6hleh"]
+[gd_scene load_steps=12 format=3 uid="uid://dlvnibfa6hleh"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ctyhq"]
 [ext_resource type="Texture2D" uid="uid://fepj8jfhmd6a" path="res://sprites/circle.png" id="2_8fxa0"]
+[ext_resource type="PackedScene" uid="uid://mv6f0y700rjb" path="res://senes/ak_47.tscn" id="2_rpp1s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o8lye"]
 
@@ -9,8 +10,115 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_a402b"]
 
+[sub_resource type="Animation" id="Animation_y2f2d"]
+resource_name = "hand_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("node/cam/hands:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.774926, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hmbhr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("node/cam/hands:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("node/cam/hands:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("anim:reset_on_save")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bfp42"]
+resource_name = "hand_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("node/cam/hands:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.774926, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dc5nd"]
+resource_name = "gun_fire"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("node/cam/hands:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.2), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim:reset_on_save")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rc4ea"]
+_data = {
+"RESET": SubResource("Animation_hmbhr"),
+"gun_fire": SubResource("Animation_dc5nd"),
+"hand_down": SubResource("Animation_y2f2d"),
+"hand_up": SubResource("Animation_bfp42")
+}
+
 [node name="player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012495, 1.00505, 0.000781894)
 collision_mask = 253
 script = ExtResource("1_ctyhq")
 
@@ -44,9 +152,11 @@ skeleton = NodePath("")
 
 [node name="left" type="MeshInstance3D" parent="node/cam/hands"]
 transform = Transform3D(-0.157015, 0.050089, 0.325177, -0.0392628, -0.193613, 0.0894935, -0.117493, -0.00223777, -0.464464, 0.0083023, -0.495284, -0.412784)
-visible = false
 mesh = SubResource("BoxMesh_a402b")
 skeleton = NodePath("")
+
+[node name="ak47" parent="node/cam/hands" instance=ExtResource("2_rpp1s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280376, -0.301451, -0.730711)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -65,3 +175,10 @@ size_flags_vertical = 4
 [node name="Circle" type="Sprite2D" parent="CanvasLayer/Node"]
 scale = Vector2(-0.02, -0.02)
 texture = ExtResource("2_8fxa0")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rc4ea")
+}
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

@@ -1,15 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://bd2b83devne0r"]
+[gd_scene load_steps=21 format=3 uid="uid://bd2b83devne0r"]
 
-[ext_resource type="PackedScene" uid="uid://b3yv5o1awgkxq" path="res://models/For_cenario_ready/door.tscn" id="1_kqh4e"]
+[ext_resource type="PackedScene" uid="uid://b3yv5o1awgkxq" path="res://models/forcenes/door.tscn" id="1_kqh4e"]
 [ext_resource type="PackedScene" uid="uid://dlvnibfa6hleh" path="res://senes/entitys/player.tscn" id="1_m8qhg"]
-[ext_resource type="PackedScene" uid="uid://bhtqov188rj04" path="res://models/For_cenario_ready/wall_cracked_gltf.tscn" id="3_gh6wd"]
-[ext_resource type="PackedScene" uid="uid://721l7yr45ahq" path="res://models/For_cenario_ready/wall_archedwindow_gated_gltf.tscn" id="4_xkpmk"]
-[ext_resource type="PackedScene" uid="uid://cpqnacggcaama" path="res://models/For_cenario_ready/wall_shelves_gltf.tscn" id="5_1b3q4"]
-[ext_resource type="PackedScene" uid="uid://bldq7w6h4aqbv" path="res://models/For_cenario_ready/wall_gltf.tscn" id="6_k1v74"]
-[ext_resource type="PackedScene" uid="uid://owru4h2rb0oc" path="res://models/For_cenario_ready/pillar_gltf.tscn" id="6_xlkp8"]
-[ext_resource type="PackedScene" uid="uid://btx5hbkj10e7n" path="res://models/For_cenario_ready/floor.tscn" id="7_0alck"]
+[ext_resource type="PackedScene" uid="uid://bhtqov188rj04" path="res://models/forcenes/wall_cracked_gltf.tscn" id="3_gh6wd"]
+[ext_resource type="PackedScene" uid="uid://721l7yr45ahq" path="res://models/forcenes/wall_archedwindow_gated_gltf.tscn" id="4_xkpmk"]
+[ext_resource type="PackedScene" uid="uid://cpqnacggcaama" path="res://models/forcenes/wall_shelves_gltf.tscn" id="5_1b3q4"]
+[ext_resource type="PackedScene" uid="uid://bldq7w6h4aqbv" path="res://models/forcenes/wall_gltf.tscn" id="6_k1v74"]
+[ext_resource type="PackedScene" uid="uid://owru4h2rb0oc" path="res://models/forcenes/pillar_gltf.tscn" id="6_xlkp8"]
+[ext_resource type="PackedScene" uid="uid://btx5hbkj10e7n" path="res://models/forcenes/floor.tscn" id="7_0alck"]
+[ext_resource type="PackedScene" uid="uid://ces0kcbdduthg" path="res://models/forcenes/floor_foundation_allsides_gltf.tscn" id="8_1qrqs"]
 [ext_resource type="PackedScene" uid="uid://dfqjp8kyu64rx" path="res://models/cenario/floor_wood_large_dark.gltf.glb" id="8_r24b8"]
+[ext_resource type="PackedScene" uid="uid://buqfd1mn7n4oo" path="res://models/forcenes/stairs_narrow_gltf.tscn" id="9_3py53"]
 [ext_resource type="PackedScene" uid="uid://bjiry56occyos" path="res://senes/prefebs/key.tscn" id="10_058hq"]
+[ext_resource type="PackedScene" uid="uid://bvb0ex5whqes5" path="res://models/forcenes/bed_frame_gltf.tscn" id="11_f6ueh"]
+[ext_resource type="PackedScene" uid="uid://wwjcl8qixovh" path="res://models/forcenes/table_long_tablecloth_gltf.tscn" id="12_0qc4d"]
+[ext_resource type="PackedScene" uid="uid://dl77d1rrnspwv" path="res://models/forcenes/table_small_gltf.tscn" id="13_15lpc"]
+[ext_resource type="PackedScene" uid="uid://cr8uqv5jma36g" path="res://models/forcenes/door_castelly.tscn" id="14_u3157"]
+[ext_resource type="PackedScene" uid="uid://b6x7o32jiqygi" path="res://models/forcenes/wall_arched_gltf.tscn" id="15_de3bb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oq8yn"]
 
@@ -21,7 +28,7 @@ albedo_color = Color(0.341176, 1, 0.34902, 1)
 [node name="world" type="Node3D"]
 
 [node name="house" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6207, -0.0373113, -6.0164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.2716, -0.0373113, -4.9398)
 
 [node name="house" type="Node3D" parent="house"]
 
@@ -35,10 +42,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05261, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92674, 0, 0)
 
 [node name="wall_archedwindow_gated_gltf3" parent="house/house" instance=ExtResource("4_xkpmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493795, 0, -15.8585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46521, 0, -15.8585)
 
 [node name="wall_archedwindow_gated_gltf2" parent="house/house" instance=ExtResource("4_xkpmk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.77081, 0, -14.1761)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.58699, 0, -14.1761)
+
+[node name="wall_archedwindow_gated_gltf4" parent="house/house" instance=ExtResource("4_xkpmk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.64339, 0, -9.83275)
 
 [node name="wall_shelves_gltf" parent="house/house" instance=ExtResource("5_1b3q4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.24826, 0.00649571, -2.33266)
@@ -47,10 +57,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.248
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.24826, 0.00649571, -6.28475)
 
 [node name="wall_gltf" parent="house/house" instance=ExtResource("6_k1v74")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.78841, -0.040561, -10.4866)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.60459, -0.040561, -10.4866)
+
+[node name="wall_gltf8" parent="house/house" instance=ExtResource("6_k1v74")]
+transform = Transform3D(1.53386, 0, 0, 0, 1, 0, 0, 0, 1, 0.00370789, -0.040561, -7.34142)
 
 [node name="wall_gltf2" parent="house/house" instance=ExtResource("6_k1v74")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53667, -0.040561, -15.8854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51425, -0.040561, -15.8854)
 
 [node name="wall_gltf4" parent="house/house" instance=ExtResource("6_k1v74")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, 0.0342042, -5.84369)
@@ -61,11 +74,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.6331
 [node name="wall_gltf6" parent="house/house" instance=ExtResource("6_k1v74")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, -0.040561, -13.8582)
 
-[node name="wall_gltf5" parent="house/house" instance=ExtResource("6_k1v74")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63313, -0.040561, -9.85139)
-
 [node name="wall_gltf3" parent="house/house" instance=ExtResource("6_k1v74")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48517, -0.040561, -15.8607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46577, -0.040561, -15.8607)
 
 [node name="door2" parent="house/house" instance=ExtResource("1_kqh4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24457, -0.0272686, -8.34669)
@@ -135,37 +145,128 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7791, 0.0872151, -5.65042)
 metadata/_edit_lock_ = true
 
-[node name="pillar_gltf6" parent="house/house" instance=ExtResource("6_xlkp8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64892, 0, -8.18242)
-
-[node name="teto" parent="house/house" instance=ExtResource("7_0alck")]
-transform = Transform3D(15.8129, 0, 0, 0, 0.269747, 0, 0, 0, 18.6197, -0.740236, 3.9149, -7.91734)
+[node name="teto" type="Node3D" parent="house/house"]
+transform = Transform3D(5.27315, 0, 0, 0, 0.238608, 0, 0, 0, 3.19777, -0.446766, 3.4764, -11.9599)
 visible = false
 metadata/_edit_lock_ = true
+
+[node name="teto3" parent="house/house/teto" instance=ExtResource("8_1qrqs")]
+transform = Transform3D(0.999352, 0, 0, 0, 0.999352, 0, 0, 0, 1.0914, 0, 0, 0.0964427)
+
+[node name="teto2" parent="house/house/teto" instance=ExtResource("8_1qrqs")]
+transform = Transform3D(0.594571, 0, 0, 0, 1, 0, 0, 0, 0.453808, 0.1253, 0, 3.12281)
+
+[node name="teto" parent="house/house/teto" instance=ExtResource("8_1qrqs")]
+transform = Transform3D(0.248784, 0, 0, 0, 1, 0, 0, 0, 1.29149, 0.941404, 0, 2.3107)
+metadata/_edit_lock_ = true
+
+[node name="pillar_gltf6" parent="house/house" instance=ExtResource("6_xlkp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64892, 0, -8.18242)
 
 [node name="floor" parent="house/house" instance=ExtResource("7_0alck")]
 transform = Transform3D(15.8129, 0, 0, 0, 0.269747, 0, 0, 0, 18.6197, -0.740236, -0.0379677, -7.91734)
 
+[node name="stairs_narrow_gltf" parent="house/house" instance=ExtResource("9_3py53")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.07748, 0, -5.3656)
+
 [node name="mobilia" type="Node3D" parent="house"]
+
+[node name="bed_frame_gltf" parent="house/mobilia" instance=ExtResource("11_f6ueh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19606, 0.0373113, -13.8194)
+
+[node name="bed_frame_gltf2" parent="house/mobilia" instance=ExtResource("11_f6ueh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21645, 0.0373113, -13.8194)
+
+[node name="table_long_tablecloth_gltf" parent="house/mobilia" instance=ExtResource("12_0qc4d")]
+transform = Transform3D(-0.0354228, 0, -0.999372, 0, 1, 0, 0.999372, 0, -0.0354228, 0.0580788, 0, -9.04493)
+
+[node name="table_small_gltf" parent="house/mobilia" instance=ExtResource("13_15lpc")]
+transform = Transform3D(0.608292, 0, -0.282501, 0, 0.67069, 0, 0.282501, 0, 0.608292, 1.001, 0, -10.2841)
+
+[node name="table_small_gltf2" parent="house/mobilia" instance=ExtResource("13_15lpc")]
+transform = Transform3D(0.653058, 0, 0.152777, 0, 0.67069, 0, -0.152777, 0, 0.653058, -0.887888, 4.76837e-07, -10.2993)
 
 [node name="wolrd" type="Node3D" parent="."]
 
 [node name="ground" type="StaticBody3D" parent="wolrd"]
-transform = Transform3D(49.8361, 0, 0, 0, 0.0996721, 0, 0, 0, 49.8361, 0, 0, 0)
+transform = Transform3D(137.458, 0, 0, 0, 0.239213, 0, 0, 0, 156.026, 0, -0.13865, 22.1534)
 collision_layer = 128
 collision_mask = 255
+metadata/_edit_lock_ = true
 
 [node name="collider" type="CollisionShape3D" parent="wolrd/ground"]
 transform = Transform3D(1.00136, 0, 0, 0, 1.00136, 0, 0, 0, 1.00136, 0, 0, 0)
 shape = SubResource("BoxShape3D_oq8yn")
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="wolrd/ground/collider"]
 material_override = SubResource("StandardMaterial3D_51bcq")
 mesh = SubResource("BoxMesh_ys2d6")
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="wolrd"]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="WORLD_objs" type="Node3D" parent="wolrd"]
+
+[node name="wall_doorway_Tsplit_gltf" parent="wolrd/WORLD_objs" instance=ExtResource("14_u3157")]
+transform = Transform3D(5.90196, 0, 0, 0, 5.90196, 0, 0, 0, 5.90196, 0, 0, -38.4481)
+
+[node name="wall_arched_gltf" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(5.902, 0, 0, 0, 5.902, 0, 0, 0, 5.902, -34.9572, 0, -38.4643)
+
+[node name="wall_arched_gltf5" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, -63.544, 0, -9.0939)
+
+[node name="wall_arched_gltf6" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, -63.544, 0, 13.9118)
+
+[node name="wall_arched_gltf7" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, -63.544, 0, 37.0788)
+
+[node name="wall_arched_gltf8" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, -63.544, 0, 59.0119)
+
+[node name="wall_arched_gltf10" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, 61.2345, 0, -9.0939)
+
+[node name="wall_arched_gltf11" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, 61.2345, 0, 13.9118)
+
+[node name="wall_arched_gltf12" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, 61.2345, 0, 37.0788)
+
+[node name="wall_arched_gltf13" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(-2.57985e-07, 0, 5.902, 0, 5.902, 0, -5.902, 0, -2.57985e-07, 61.2345, 0, 59.0119)
+
+[node name="wall_arched_gltf3" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(4.17334, 0, 4.17334, 0, 5.902, 0, -4.17334, 0, 4.17334, -55.4259, 0, -29.597)
+
+[node name="wall_arched_gltf9" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(4.17334, 0, -4.17334, 0, 5.902, 0, 4.17334, 0, 4.17334, -55.4259, 0, 75.6449)
+
+[node name="wall_arched_gltf14" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(4.17334, 0, 4.17334, 0, 5.902, 0, -4.17334, 0, 4.17334, 53.8972, 0, 75.6449)
+
+[node name="wall_arched_gltf4" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(4.17334, 0, -4.17334, 0, 5.902, 0, 4.17334, 0, 4.17334, 53.1489, 0, -29.597)
+
+[node name="wall_arched_gltf2" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(5.902, 0, 0, 0, 5.902, 0, 0, 0, 5.902, 35.2564, 0, -38.4643)
+
+[node name="wall_arched_gltf15" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(5.902, 0, 0, 0, 5.902, 0, 0, 0, 5.902, -34.9572, 0, 83.6483)
+
+[node name="wall_arched_gltf18" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(5.902, 0, 0, 0, 5.902, 0, 0, 0, 5.902, -11.4579, 0, 83.6483)
+
+[node name="wall_arched_gltf16" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(5.902, 0, 0, 0, 5.902, 0, 0, 0, 5.902, 35.2564, 0, 83.6483)
+
+[node name="wall_arched_gltf17" parent="wolrd/WORLD_objs" instance=ExtResource("15_de3bb")]
+transform = Transform3D(5.902, 0, 0, 0, 5.902, 0, 0, 0, 5.902, 12.0981, 0, 83.6483)
 
 [node name="player" parent="." instance=ExtResource("1_m8qhg")]
 transform = Transform3D(1.00143, 0, 0, 0, 1.00143, 0, 0, 0, 1.00143, 12.0569, 1, 2.47096)

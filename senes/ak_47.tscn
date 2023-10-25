@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://q8l0qdihnov7"]
+[gd_scene load_steps=2 format=3 uid="uid://mv6f0y700rjb"]
 
-[ext_resource type="Script" path="res://scripts/gun.gd" id="1_00n3b"]
 [ext_resource type="PackedScene" uid="uid://c5dn3rgd7hsn3" path="res://models/ak47/ak.glb" id="1_ygq3y"]
 
 [node name="ak47" type="StaticBody3D"]
 collision_layer = 4
 collision_mask = 255
-script = ExtResource("1_00n3b")
 
 [node name="ak" parent="." instance=ExtResource("1_ygq3y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00807011, -0.0120411, 0.00577259)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00813057, 0.111082, -0.848449)
